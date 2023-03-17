@@ -1,14 +1,14 @@
 "use client"
 
 import {useEffect} from "react";
-import {PrimerPayments} from "@/gateway/primer-payments";
-
-const primerPayments = new PrimerPayments('#checkout-container');
 
 export default function Page() {
   useEffect(() => {
     const mount = async () => {
       try {
+        const {PrimerPayments} = await import("@/gateway/primer-payments");
+        const primerPayments = new PrimerPayments('#checkout-container');
+
         await primerPayments.preload();
         await primerPayments.render();
       } catch (e) {

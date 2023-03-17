@@ -3,6 +3,9 @@
 # JestBrain's idea folder
 .idea
 
+# VSCode
+.vscode
+
 # dependencies
 /node_modules
 /.pnp
